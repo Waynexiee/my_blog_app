@@ -1,10 +1,29 @@
 //@import "bootstrap-sprockets";
 //@import "bootstrap";
 #home_page {
+  background-image: image-url('home-bg.jpg');
+}
+#show_blog_pic {
+  background-image: image-url('post-bg.jpg');
+}
 
-      background-image: image-url('home-bg.jpg');
+#show_user_pic {
+  background-image: image_url('about-bg.jpg');
+}
 
+#button_log_in {
+  background-color: deepskyblue;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border-radius: 0;
+
+}
+
+#Log_blog_pic {
+  background-image: image_url('contact-bg.jpg');
 }
 
 //

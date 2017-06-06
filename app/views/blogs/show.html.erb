@@ -1,19 +1,20 @@
-<p id="notice"><%= notice %></p>
+
 
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: url('img/post-bg.jpg')">
+<header class="intro-header" id="show_blog_pic">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="post-heading">
-          <h1>  <%= @blog.name %></h1>
-          <span class="meta">Posted on <%= @blog.created_at %></span>
+          <h1 id="show_blog_name">  <%= @blog.name %></h1>
+          <span class="meta" id="show_blog_time">Posted on <%= @blog.created_at.to_date %></span>
         </div>
       </div>
     </div>
   </div>
 </header>
+
 <!-- Post Content -->
 <article>
   <div class="container">
@@ -27,7 +28,11 @@
 
 <hr>
 
-<% if logged_in? %>
-<%= link_to 'Edit', edit_blog_path(@blog) %>|
-<% end %>
-<%= link_to 'Back', blogs_path %>
+
+<div class="col-lg-offset-1">
+  <% if logged_in? %>
+      <%= link_to 'Edit', edit_blog_path(@blog) %>|
+  <% end %>
+  <%= link_to 'Back', blogs_path %>
+</div>
+

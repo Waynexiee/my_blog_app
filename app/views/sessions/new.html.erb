@@ -1,4 +1,16 @@
-<h1>Log in</h1>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" id="Log_blog_pic">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-5 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1 >Log in</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -9,8 +21,9 @@
 
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.submit "Log in", class: 'form-control' %>
+      <p>
+        <%= f.submit "Log in", class: 'form-control',id: 'button_log_in' %>
+      </p>
     <% end %>
   </div>
 </div>

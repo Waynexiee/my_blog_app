@@ -1,27 +1,28 @@
-<%= form_for(blog) do |f| %>
-  <% if blog.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+<%= form_for(@blog) do |f| %>
+  <% if @blog.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
 
-      <ul>
-      <% blog.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @blog.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+  <div class="col-lg-3">
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </p>
+
+    <div class="form-group">
+      <%= f.cktext_area :content, :as => :ckeditor, input_html: {:ckeditor => {:toolbar => 'FULL'}}, class: "ckeditor" %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+    <%= link_to 'Back', blogs_path %>
   </div>
 <% end %>
