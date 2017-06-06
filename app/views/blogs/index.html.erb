@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        <% @blogs.each do |blog| %>
+            <div class="post-preview">
+                <a>
+                  <h2 class="post-title">
+                    <%= link_to blog.name, blog %>
+                  </h2>
+                </a>
+                <% if logged_in? %>
+                    <%= link_to 'Edit', edit_blog_path(blog) %>
+                    <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
+                <p class="post-meta">Posted on <%= blog.created_at %></p>
+            </div>
+            <hr>
+        <% end %>
+    </div>
+  </div>
+  <%= will_paginate %>
+</div>
+
+<br>
+<% if logged_in? %>
+<%= link_to 'New Blog', new_blog_path %>
+<% end %>
