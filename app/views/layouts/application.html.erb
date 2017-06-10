@@ -32,7 +32,7 @@
             <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "About", users_path %></li>
             <div class="dropdown">
-              <button class="dropbtn">Language</button>
+              <li class="dropbtn"><%= link_to "Language", ""%></li>
               <div class="dropdown-content">
                 <li><%= link_to "Chinese", root_path(locale: "cn") %></li>
                 <li><%= link_to "English", root_path(locale: "en") %></li>
