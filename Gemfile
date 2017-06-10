@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'ckeditor'
 gem 'mini_magick'
 gem 'carrierwave'
+gem 'rails-i18n'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

@@ -20,9 +20,18 @@
       <%= f.cktext_area :content, :as => :ckeditor, input_html: {:ckeditor => {:toolbar => 'FULL'}}, class: "ckeditor" %>
     </div>
 
+    <p>
+      <%= f.label :en_name %>
+      <%= f.text_field :en_name %>
+    </p>
+
+    <div class="form-group">
+      <%= f.cktext_area :en_content, :as => :ckeditor, input_html: {:ckeditor => {:toolbar => 'FULL'}}, class: "ckeditor" %>
+    </div>
+
     <div class="actions">
       <%= f.submit %>
     </div>
-    <%= link_to 'Back', blogs_path %>
+
   </div>
 <% end %>

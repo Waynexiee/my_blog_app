@@ -31,7 +31,13 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "About", users_path %></li>
-            <li><%= link_to "Language", "#" %></li>
+            <div class="dropdown">
+              <button class="dropbtn">Language</button>
+              <div class="dropdown-content">
+                <li><%= link_to "Chinese", root_path(locale: "cn") %></li>
+                <li><%= link_to "English", root_path(locale: "en") %></li>
+              </div>
+            </div>
             <% if logged_in? %>
                 <li>  <%= link_to "Log out", logout_path, method: "delete" %></li>
             <% end %>

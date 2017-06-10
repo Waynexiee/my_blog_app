@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="post-heading">
-          <h1 id="show_blog_name">  <%= @blog.name %></h1>
+          <h1 id="show_blog_name">  <%= @blog.en_name %></h1>
           <span class="meta" id="show_blog_time">Posted on <%= @blog.created_at.to_date %></span>
         </div>
       </div>
@@ -20,7 +20,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <%= raw(@blog.content) %>
+        <%= raw(@blog.en_content) %>
       </div>
     </div>
   </div>
@@ -33,6 +33,6 @@
   <% if logged_in? %>
       <%= link_to 'Edit', edit_blog_path(@blog) %>|
   <% end %>
-  <%= link_to 'Back', blogs_path %>
+  <%= link_to 'Back', blogs_path(locale: "en") %>
 </div>
 

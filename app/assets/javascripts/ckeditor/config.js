@@ -1,34 +1,33 @@
 CKEDITOR.editorConfig = function(config) {
     config.language = 'en';
     config.width = '1000';
-    config.filebrowserBrowseUrl = "/ckeditor/attachment_files";
-    config.filebrowserImageBrowseLinkUrl = "/ckeditor/pictures";
-    config.filebrowserImageBrowseUrl = "/ckeditor/pictures";
-    config.filebrowserImageUploadUrl = "/ckeditor/pictures";
-    config.filebrowserUploadUrl = "/ckeditor/attachment_files";
 
-    config.toolbar_Pure = [
-        '/', {
-            name: 'basicstyles',
-            items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat']
-        }, {
-            name: 'paragraph',
-            items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl']
-        }, {
-            name: 'links',
-            items: ['Link', 'Unlink']
-        }, '/', {
-            name: 'styles',
-            items: ['Styles', 'Format', 'Font', 'FontSize']
-        }, {
-            name: 'colors',
-            items: ['TextColor', 'BGColor']
-        }, {
-            name: 'insert',
-            items: ['Image', 'Table', 'HorizontalRule', 'PageBreak']
-        }
+
+    config.toolbarGroups = [
+        // { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+        // { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+        // { name: 'links' },
+        // { name: 'insert' },
+        // { name: 'forms' },
+        { name: 'tools' },
+        // { name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
+
+        // '/',
+        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+        // { name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+        { name: 'styles' },
+        { name: 'others' }
+        // { name: 'colors' },
+        // { name: 'about' }
     ];
-    config.toolbar = 'Pure';
-    config.enterMode = CKEDITOR.ENTER_BR;
-    return true;
+
+    // Remove some buttons provided by the standard plugins, which are
+    // not needed in the Standard(s) toolbar.
+    config.removeButtons = 'Underline,Subscript,Superscript';
+    config.extraPlugins = 'markdown';  // this is the point!
+    // Set the most common block elements.
+    config.format_tags = 'p;h1;h2;h3;pre';
+
+    // Simplify the dialog windows.
+    config.removeDialogTabs = 'image:advanced;link:advanced';
 };

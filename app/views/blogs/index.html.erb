@@ -24,7 +24,7 @@
             <div class="post-preview">
                 <a>
                   <h2 class="post-title">
-                    <%= link_to blog.name, blog %>
+                    <%= link_to blog.name, blog_path(locale:"cn",id:blog.id) %>
                   </h2>
                 </a>
                 <% if logged_in? %>
