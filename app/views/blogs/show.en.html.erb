@@ -36,3 +36,10 @@
   <%= link_to 'Back', blogs_path(locale: "en") %>
 </div>
 
+<br>
+
+<h2><%= @blog.comments.count %> Comments</h2>
+<%= render @blog.comments %>
+<h2>Add a new comment here:</h2>
+<%= render 'comments/form' %>
+

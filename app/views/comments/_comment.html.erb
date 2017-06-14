@@ -1,0 +1,25 @@
+<ul class="formComments">
+  <li class="commentLi commentstep-1" data-commentid="4">
+    <table class="form-comments-table">
+      <tr>
+        <td><div class="comment-timestamp"><%= time_ago_in_words(comment.created_at) %></div></td>
+        <td><div class="comment-user"><%= comment.name %></div></td>
+        <td>
+          <div class="comment-avatar">
+            <img src="">
+          </div>
+        </td>
+        <td>
+          <div id="comment-4" data-commentid="4" class="comment comment-step1">
+            <%= comment.body %>
+            <div id="commentactions-4" class="comment-actions">
+              <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Reply</button>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </li>
+</ul>

@@ -28,11 +28,27 @@
 
 <hr>
 
-
 <div class="col-lg-offset-1">
   <% if logged_in? %>
       <%= link_to 'Edit', edit_blog_path(@blog) %>|
   <% end %>
   <%= link_to 'Back', blogs_path %>
+</div>
+
+
+
+<br>
+
+
+
+
+<div class="chatContainer">
+
+  <div class="chatTitleContainer"><%= @blog.comments.count %> Comments</div>
+  <div class="chatHistoryContainer">
+    <%= render @blog.comments %>
+    <h2>Add a new comment here:</h2>
+    <%= render 'comments/form' %>
+  </div>
 </div>
 

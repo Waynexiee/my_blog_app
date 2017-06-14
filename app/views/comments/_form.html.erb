@@ -1,0 +1,19 @@
+<%= form_for([@blog,@blog.comments.build]) do |f| %>
+
+
+
+<div class="input-group input-group-sm chatMessageControls">
+  <span class="input-group-addon" id="sizing-addon3">Name</span>
+  <input id="comment_name" type="text" class="form-control" placeholder="necessary" aria-describedby="sizing-addon3">
+
+  <span class="input-group-addon" id="sizing-addon3">Email</span>
+  <input id="comment_email" type="text" class="form-control" placeholder="Optional" aria-describedby="sizing-addon3">
+
+  <span class="input-group-addon" id="sizing-addon3">Comment</span>
+  <input id="comment_body" type="text" class="form-control" placeholder="Type your message here.." aria-describedby="sizing-addon3">
+  <span class="input-group-btn">
+    <button id="send_submit" class="btn btn-primary" type="submit" name="commit"><i class="fa fa-send"></i>Submit</button>
+  </span>
+
+</div>
+<% end %>
