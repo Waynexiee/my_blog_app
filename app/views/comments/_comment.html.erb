@@ -1,25 +1,19 @@
-<ul class="formComments">
-  <li class="commentLi commentstep-1" data-commentid="4">
+
+  <li class="commentLi commentstep-1" data-commentid="<%= comment.id %>">
     <table class="form-comments-table">
-      <tr>
-        <td><div class="comment-timestamp"><%= time_ago_in_words(comment.created_at) %></div></td>
-        <td><div class="comment-user"><%= comment.name %></div></td>
-        <td>
-          <div class="comment-avatar">
-            <img src="">
-          </div>
-        </td>
-        <td>
-          <div id="comment-4" data-commentid="4" class="comment comment-step1">
-            <%= comment.body %>
-            <div id="commentactions-4" class="comment-actions">
-              <div class="btn-group" role="group" aria-label="...">
-                <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Reply</button>
-              </div>
+      <td><div class="comment-timestamp"><%= time_ago_in_words(comment.created_at) %></div></td>
+      <td><div class="comment-user"><%= comment.name %> : </div></td>
+
+      <td>
+        <div id="comment-<%= comment.id %>" data-commentid="<%= comment.id %>" class="comment comment-step1">
+          <%= comment.body %>
+          <div id="commentactions-<%= comment.id %>" class="comment-actions">
+            <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-primary btn-sm" id="reply_btn"><i class="fa fa-edit"></i> Reply</button>
             </div>
           </div>
-        </td>
+        </div>
+      </td>
       </tr>
     </table>
   </li>
-</ul>

@@ -7,7 +7,7 @@
     height: 50px;
     width: 100%;
     font-family: Expert-Sans-Regular, verdana, Arial, helvetica, sans-serif;
-    color: #b5b5b5;
+    color: black;
 
 }
 
@@ -15,7 +15,7 @@
 
     height: 100%;
     width: 100%;
-    background-color: #e4e4e4;
+    background-color: white;
     padding: 20px;
 
 }
@@ -237,5 +237,11 @@
 
 .commentTD {
 
+
+}
+
+#comment_body {
+    margin: 0px;
+    height: 85px;
 
 }

@@ -41,14 +41,15 @@
 
 
 
-
 <div class="chatContainer">
 
   <div class="chatTitleContainer"><%= @blog.comments.count %> Comments</div>
   <div class="chatHistoryContainer">
-    <%= render @blog.comments %>
-    <h2>Add a new comment here:</h2>
-    <%= render 'comments/form' %>
+    <ul class="formComments">
+      <%= render @blog.comments %>
+      <h5>Add a new comment here:</h5>
+      <%= render 'comments/form' %>
+    </ul>
   </div>
 </div>
 

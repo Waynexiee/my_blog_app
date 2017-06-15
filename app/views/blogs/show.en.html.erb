@@ -38,8 +38,15 @@
 
 <br>
 
-<h2><%= @blog.comments.count %> Comments</h2>
-<%= render @blog.comments %>
-<h2>Add a new comment here:</h2>
-<%= render 'comments/form' %>
+<div class="chatContainer">
+
+  <div class="chatTitleContainer"><%= @blog.comments.count %> Comments</div>
+  <div class="chatHistoryContainer">
+    <ul class="formComments">
+      <%= render @blog.comments %>
+      <h5>Add a new comment here:</h5>
+      <%= render 'comments/form' %>
+    </ul>
+  </div>
+</div>
 
