@@ -40,12 +40,12 @@
 
 <div class="chatContainer">
 
-  <div class="chatTitleContainer"><%= @blog.comments.count %> Comments</div>
+  <div class="chatTitleContainer" id="comment_count" ><%= @blog.comments.count %> Comments:</div>
   <div class="chatHistoryContainer">
     <ul class="formComments">
-      <%= render @blog.comments %>
+      <%= comments_tree_for @blog.comments.roots %>
       <h5>Add a new comment here:</h5>
-      <%= render 'comments/form' %>
+      <%= render 'comments/form',blog_id: @blog %>
     </ul>
   </div>
 </div>

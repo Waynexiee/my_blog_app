@@ -1,42 +1,37 @@
 class CommentsController < ApplicationController
-
-  # GET /comments
-  # GET /comments.json
   def index
     @blog = Blog.find(params[:blog_id])
     @comments = @blog.comments.all
     redirect_to blog_path(@blog)
   end
 
-  # GET /comments/1
-  # GET /comments/1.json
-  def show
+  def new
+    @blog = Blog.find_by_id(params[:blog_id])
+    @comment = Comment.new(parent_id: params[:parent_id],blog_id: params[:blog_id])
   end
 
-  # GET /comments/1/edit
-  def edit
-  end
-
-  # POST /comments
-  # POST /comments.json
   def create
-    @blog = Blog.find(params[:blog_id])
-    @comment = @blog.comments.new(comment_params)
-
+    if params[:comment][:parent_id].to_i > 0
+      @blog = Blog.find(params[:blog_id])
+      parent = Comment.find_by_id(params[:comment][:parent_id])
+      @comment = parent.children.build(comment_params)
+    else
+      @blog = Blog.find(params[:blog_id])
+      @comment = @blog.comments.new(comment_params)
+    end
 
     if @comment.save
-      flash[:notice] = "comment is successfully created!"
+      flash[:success] = 'Your comment was successfully added!'
+      redirect_to @blog
     else
-      flash[:notice] = "comment is failed to be created!"
+      render 'new'
     end
-    redirect_to blog_path(@blog)
-
   end
 
   private
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def comment_params
-      params.require(:comment).permit(:name, :email, :body)
-    end
+  def comment_params
+    params.require(:comment).permit(:email, :body, :name, :parent_id, :blog_id)
+  end
+
 end

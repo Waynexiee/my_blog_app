@@ -1,19 +1,22 @@
+<div class="container">
+  <div class="well">
 
-  <li class="commentLi commentstep-1" data-commentid="<%= comment.id %>">
-    <table class="form-comments-table">
-      <td><div class="comment-timestamp"><%= time_ago_in_words(comment.created_at) %></div></td>
-      <td><div class="comment-user"><%= comment.name %> : </div></td>
+    <p class="text-muted comment-size"><%= comment.root? ? "Started by" : "Replied by" %> <strong><%= comment.name %></strong> on
+      <%= l(comment.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
 
-      <td>
-        <div id="comment-<%= comment.id %>" data-commentid="<%= comment.id %>" class="comment comment-step1">
-          <%= comment.body %>
-          <div id="commentactions-<%= comment.id %>" class="comment-actions">
-            <div class="btn-group" role="group" aria-label="...">
-              <button type="button" class="btn btn-primary btn-sm" id="reply_btn"><i class="fa fa-edit"></i> Reply</button>
-            </div>
-          </div>
-        </div>
-      </td>
-      </tr>
-    </table>
-  </li>
+    <p class="comment-size"><%= comment.body %></p>
+
+    <a data-toggle="collapse" data-parent="#accordion"
+       href="#collapse-<%= comment.id %> ">
+      reply
+    </a>
+
+    <div id="collapse-<%= comment.id %>" class="panel-collapse collapse">
+      <div>
+        Add reply here:<br/>
+
+        <%= render "comments/form", params:{parent_id:comment.id,blog_id:comment.blog_id} %>
+      </div>
+    </div>
+  </div>
+</div>

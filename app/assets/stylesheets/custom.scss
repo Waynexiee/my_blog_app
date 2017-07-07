@@ -80,6 +80,26 @@
   padding: 6px 12px;
 
 }
+
+.replies {
+  margin-left: 30px;
+}
+
+.replies .replies .replies .replies {
+  margin-left: 0;
+}
+
+#comment_count {
+  font-size: 30px;
+  color: black;
+  margin-left: 70px;
+  margin-bottom: 40px;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.comment-size {
+  font-size: 13px;
+}
 /////////////////////////////////
 
 //

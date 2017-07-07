@@ -5,15 +5,15 @@ Rails.application.routes.draw do
   get '/login',  to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  resources :blogs do
-    resources :comments
-  end
+
   resources :users
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   scope '(:locale)' do
     resources :blogs do
-      resources :comments
+      resources :comments, only: [:index, :create, :new]
+
     end
   end
 end

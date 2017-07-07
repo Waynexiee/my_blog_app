@@ -1,3 +1,3 @@
 class Comment < ApplicationRecord
-  belongs_to :blog
+  acts_as_tree order: 'created_at DESC'
 end

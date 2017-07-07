@@ -1,5 +1,3 @@
-
-
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
 <header class="intro-header" id="show_blog_pic">
@@ -35,20 +33,16 @@
   <%= link_to 'Back', blogs_path %>
 </div>
 
-
-
 <br>
-
-
 
 <div class="chatContainer">
 
-  <div class="chatTitleContainer"><%= @blog.comments.count %> Comments</div>
+  <div class="chatTitleContainer" id="comment_count"><%= @blog.comments.count %> Comments</div>
   <div class="chatHistoryContainer">
     <ul class="formComments">
-      <%= render @blog.comments %>
+      <%= comments_tree_for @blog.comments.roots %>
       <h5>Add a new comment here:</h5>
-      <%= render 'comments/form' %>
+      <%= render 'comments/form',blog_id: @blog %>
     </ul>
   </div>
 </div>

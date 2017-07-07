@@ -4,4 +4,3 @@
 //= require clean-blog.min.js
 //= require jquery
 //= require jquery_ujs
-//= require comment.js
