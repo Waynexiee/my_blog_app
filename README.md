@@ -1,25 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple blog system. Sample url: https://aqueous-shore-51059.herokuapp.com/
 
-Things you may want to cover:
 
 * Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+ruby-2.3.4
 
 * Deployment instructions
 
-* ...
-# my_blog_app
+1. bundle install --without production 
+2. rails db:migrate 
+3. rails s
+
+* Features 
+
+1. Writers could log into system to write blogs in Chinese and English. log path :https://aqueous-shore-51059.herokuapp.com/login
+
+2. Readers could read blogs in English version or Chinese version.  
+3. Readers could comment on blog or other comments. 
