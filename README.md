@@ -1,6 +1,6 @@
 # README
 
-This is a simple blog system. Sample url: https://aqueous-shore-51059.herokuapp.com/
+This is a simple blog system. Sample url: https://aqueous-shore-51059.herokuapp.com/?locale=en
 
 
 * Ruby version
